@@ -43,6 +43,12 @@ class ItemRepositoryTest {
         item.setItemDetail("테스트 상품 상세 설명");
         item.setItemSellStatus(ItemSellStatus.SELL);
         item.setStockNumber(100);
+        item.setCompany("SONY");
+        item.setCameraDiv("DSLR");
+        item.setSensorDiv("풀프레임");
+        item.setPixels(4001);
+        item.setResolution("FHD");
+        item.setPopular_options("방수");
         item.setRegTime(LocalDateTime.now());
         item.setUpdateTime(LocalDateTime.now());
         Item savedItem = itemRepository.save(item);
@@ -54,6 +60,12 @@ class ItemRepositoryTest {
             Item item = new Item();
             item.setItemNm("테스트 상품" + i);
             item.setPrice(10000 + i);
+            item.setCompany("브랜드" + i);
+            item.setResolution("해상도" + i);
+            item.setPopular_options("인기 선택사항"+i);
+            item.setPixels(1500 + i);
+            item.setSensorDiv("센서 분류"+i);
+            item.setCameraDiv("디카 분류" + i);
             item.setItemDetail("테스트 상품 상세 설명" + i);
             item.setItemSellStatus(ItemSellStatus.SELL);
             item.setStockNumber(100); item.setRegTime(LocalDateTime.now());

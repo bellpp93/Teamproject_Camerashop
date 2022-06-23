@@ -44,6 +44,12 @@ public class ThymeleafExController {
             itemDto.setItemDetail("상품 상세 설명"+i);
             itemDto.setItemNm("테스트 상품" + i);
             itemDto.setPrice(1000*i);
+            itemDto.setCompany("브랜드" + i);
+            itemDto.setResolution("해상도" + i);
+            itemDto.setPopular_options("인기 선택사항"+i);
+            itemDto.setPixels(23 + i);
+            itemDto.setSensorDiv("센서 분류"+i);
+            itemDto.setCameraDiv("디카 분류" + i);
             itemDto.setRegTime(LocalDateTime.now());
 
             itemDtoList.add(itemDto);
@@ -64,6 +70,12 @@ public class ThymeleafExController {
             itemDto.setItemDetail("상품 상세 설명"+i);
             itemDto.setItemNm("테스트 상품" + i);
             itemDto.setPrice(1000*i);
+            itemDto.setCompany("브랜드" + i);
+            itemDto.setResolution("해상도" + i);
+            itemDto.setPopular_options("인기 선택사항"+i);
+            itemDto.setPixels(1500 + i);
+            itemDto.setSensorDiv("센서 분류"+i);
+            itemDto.setCameraDiv("디카 분류" + i);
             itemDto.setRegTime(LocalDateTime.now());
 
             itemDtoList.add(itemDto);

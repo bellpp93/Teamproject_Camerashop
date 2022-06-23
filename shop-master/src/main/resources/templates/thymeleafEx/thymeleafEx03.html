@@ -16,6 +16,12 @@
         <td>상품설명</td>
         <td>가격</td>
         <td>상품등록일</td>
+        <td>제조사</td>
+        <td>디카 분류</td>
+        <td>센서 분류</td>
+        <td>유효 화소수</td>
+        <td>해상도</td>
+        <td>인기선택사항</td>
     </tr>
     </thead>
     <tbody>
@@ -24,6 +30,12 @@
         <td th:text="${itemDto.itemNm}"></td>
         <td th:text="${itemDto.itemDetail}"></td>
         <td th:text="${itemDto.price}"></td>
+        <td th:text="${itemDto.company}"></td>
+        <td th:text="${itemDto.cameraDiv}"></td>
+        <td th:text="${itemDto.sensorDiv}"></td>
+        <td th:text="${itemDto.pixels}"></td>
+        <td th:text="${itemDto.resolution}"></td>
+        <td th:text="${itemDto.popular_option}"></td>
         <td th:text="${itemDto.regTime}"></td>
     </tr>
     </tbody>

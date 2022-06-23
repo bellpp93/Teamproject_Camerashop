@@ -92,6 +92,30 @@
         </div>
         <p th:if="${#fields.hasErrors('stockNumber')}" th:errors="*{stockNumber}" class="fieldError">Incorrect data</p>
 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" for="inputGroupSelect01">제조사</span>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>제조사를 선택해 주세요</option>
+                <option value="1">SONY</option>
+                <option value="2">캐논</option>
+                <option value="3">니콘</option>
+                <option value="3">파나소닉</option>
+                <option value="3">후지필름</option>
+            </select>
+
+        </div>
+        <p th:if="${#fields.hasErrors('company')}" th:errors="*{company}" class="fieldError">Incorrect data</p>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">디카 분류</span>
+            </div>
+            <input type="text" th:field="*{cameraDiv}" class="form-control" placeholder="">
+        </div>
+        <p th:if="${#fields.hasErrors('company')}" th:errors="*{company}" class="fieldError">Incorrect data</p>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">상품 상세 내용</span>

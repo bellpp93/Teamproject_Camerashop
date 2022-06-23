@@ -30,7 +30,25 @@ public class Item extends BaseEntity {
     @Column(nullable = false)
     private int stockNumber; //재고수량
 
-    @Lob
+    @Column
+    private String company; //브랜드
+
+    @Column
+    private String cameraDiv; //카메라 분류
+
+    @Column
+    private String sensorDiv; //센서 분류
+
+    @Column
+    private int pixels; //유효 화소수
+
+    @Column
+    private String resolution; //해상도
+
+    @Column
+    private String popular_options; //기타 선택사항
+
+   @Lob
     @Column(nullable = false)
     private String itemDetail; //상품 상세 설명
 

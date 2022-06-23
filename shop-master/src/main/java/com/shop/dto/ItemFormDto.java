@@ -30,6 +30,18 @@ public class ItemFormDto {
 
     private ItemSellStatus itemSellStatus;
 
+    private String company;
+
+    private String cameraDiv;
+
+    private String sensorDiv;
+
+    private int pixels;
+
+    private String resolution;
+
+    private String popular_options;
+
     private List<ItemImgDto> itemImgDtoList = new ArrayList<>();
 
     private List<Long> itemImgIds = new ArrayList<>();

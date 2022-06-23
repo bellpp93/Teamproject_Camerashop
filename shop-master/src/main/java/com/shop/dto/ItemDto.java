@@ -19,6 +19,18 @@ public class ItemDto {
 
     private String sellStatCd;
 
+    private String company;
+
+    private String cameraDiv;
+
+    private String sensorDiv;
+
+    private Integer pixels;
+
+    private String resolution;
+
+    private String popular_options;
+
     private LocalDateTime regTime;
 
     private LocalDateTime updateTime;
