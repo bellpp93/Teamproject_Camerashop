@@ -46,8 +46,8 @@
             <p th:if="${#fields.hasErrors('registNumber')}" th:errors="*{registNumber}" class="fieldError">Incorrect data</p>
         </div>
         <div class="form-group">
-            <label th:for="sex">섹스</label>
-            <input type="text" th:field="*{sex}" class="form-control" placeholder="섹스를 입력해주세요">
+            <label th:for="sex">성별</label>
+            <input type="text" th:field="*{sex}" class="form-control" placeholder="성별을 입력해주세요">
             <p th:if="${#fields.hasErrors('sex')}" th:errors="*{sex}" class="fieldError">Incorrect data</p>
         </div>
         <div class="form-group">
