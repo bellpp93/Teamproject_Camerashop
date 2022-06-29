@@ -1,5 +1,6 @@
 package com.shop.dto;
 
+import com.shop.constant.ItemDetails.*;
 import com.shop.constant.ItemSellStatus;
 import com.shop.entity.Item;
 import lombok.Getter;
@@ -30,17 +31,17 @@ public class ItemFormDto {
 
     private ItemSellStatus itemSellStatus;
 
-    private String company;
+    private Company company;
 
-    private String cameraDiv;
+    private CameraDiv cameraDiv;
 
-    private String sensorDiv;
+    private SensorDiv sensorDiv;
 
-    private int pixels;
+    private Integer pixels;
 
-    private String resolution;
+    private Resolution resolution;
 
-    private String popular_options;
+    private Popular_options popular_options;
 
     private List<ItemImgDto> itemImgDtoList = new ArrayList<>();
 

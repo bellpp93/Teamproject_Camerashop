@@ -1,21 +1,21 @@
 package com.shop.controller;
 
+import com.shop.constant.ItemDetails.*;
+import lombok.Getter;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.ui.Model;
 import com.shop.dto.ItemFormDto;
 
 import com.shop.service.ItemService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
+
 import javax.validation.Valid;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
-import org.springframework.web.bind.annotation.PathVariable;
 import javax.persistence.EntityNotFoundException;
 
 import com.shop.dto.ItemSearchDto;
@@ -27,6 +27,7 @@ import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
+
 public class ItemController {
 
     private final ItemService itemService;
@@ -36,6 +37,7 @@ public class ItemController {
         model.addAttribute("itemFormDto", new ItemFormDto());
         return "item/itemForm";
     }
+
 
     @PostMapping(value = "/admin/item/new")
     public String itemNew(@Valid ItemFormDto itemFormDto, BindingResult bindingResult,
@@ -115,6 +117,33 @@ public class ItemController {
         ItemFormDto itemFormDto = itemService.getItemDtl(itemId);
         model.addAttribute("item", itemFormDto);
         return "item/itemDtl";
+
+    }
+
+
+    @ModelAttribute("company")
+    private Company[] companies(){
+        return Company.values();
+    }
+
+    @ModelAttribute("cameraDiv")
+    private CameraDiv[] cameraDives(){
+        return CameraDiv.values();
+    }
+
+    @ModelAttribute("sensorDiv")
+    private SensorDiv[] sensorDives(){
+        return SensorDiv.values();
+    }
+
+    @ModelAttribute("resolution")
+    private Resolution[] resolutions(){
+        return Resolution.values();
+    }
+
+    @ModelAttribute("popular_options")
+    private Popular_options[] popular_options(){
+        return Popular_options.values();
     }
 
 }

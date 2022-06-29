@@ -1,5 +1,6 @@
 package com.shop.entity;
 
+import com.shop.constant.ItemDetails.*;
 import com.shop.constant.ItemSellStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,23 +31,8 @@ public class Item extends BaseEntity {
     @Column(nullable = false)
     private int stockNumber; //재고수량
 
-    @Column
-    private String company; //브랜드
-
-    @Column
-    private String cameraDiv; //카메라 분류
-
-    @Column
-    private String sensorDiv; //센서 분류
-
-    @Column
-    private int pixels; //유효 화소수
-
-    @Column
-    private String resolution; //해상도
-
-    @Column
-    private String popular_options; //기타 선택사항
+    @Column(nullable = false)
+    private Integer pixels; //유효 화소수
 
    @Lob
     @Column(nullable = false)
@@ -55,10 +41,32 @@ public class Item extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private ItemSellStatus itemSellStatus; //상품 판매 상태
 
+    @Enumerated(EnumType.STRING)
+    private Company company;//제조회사
+
+    @Enumerated(EnumType.STRING)
+    private CameraDiv cameraDiv; //카메라 분류
+
+    @Enumerated(EnumType.STRING)
+    private SensorDiv sensorDiv; //센서 분류
+
+    @Enumerated(EnumType.STRING)
+    private Resolution resolution; //해상도
+
+    @Enumerated(EnumType.STRING)
+    private Popular_options popular_options; //기타 선택사항
+
+
     public void updateItem(ItemFormDto itemFormDto){
         this.itemNm = itemFormDto.getItemNm();
         this.price = itemFormDto.getPrice();
         this.stockNumber = itemFormDto.getStockNumber();
+        this.company = itemFormDto.getCompany();
+        this.cameraDiv = itemFormDto.getCameraDiv();
+        this.sensorDiv = itemFormDto.getSensorDiv();
+        this.pixels = itemFormDto.getPixels();
+        this.resolution = itemFormDto.getResolution();
+        this.popular_options = itemFormDto.getPopular_options();
         this.itemDetail = itemFormDto.getItemDetail();
         this.itemSellStatus = itemFormDto.getItemSellStatus();
     }
@@ -74,5 +82,7 @@ public class Item extends BaseEntity {
     public void addStock(int stockNumber){
         this.stockNumber += stockNumber;
     }
+
+
 
 }

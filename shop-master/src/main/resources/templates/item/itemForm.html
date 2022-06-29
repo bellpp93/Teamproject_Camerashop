@@ -104,186 +104,73 @@
         </div>
         <p th:if="${#fields.hasErrors('stockNumber')}" th:errors="*{stockNumber}" class="fieldError">Incorrect data</p>
 
+
         <div id="detail">
             <div id="dt_header"><h5>상세 등록</h5></div>
-            <div>
-                <h6>제조사</h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="company" id="sony">
-                    <label class="form-check-label" for="sony">
-                        SONY
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="company" id="nikon">
-                    <label class="form-check-label" for="nikon">
-                        NIKON
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="company" id="olimpuse">
-                    <label class="form-check-label" for="olimpuse">
-                        OLIMPUSE
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="company" id="canon">
-                    <label class="form-check-label" for="canon">
-                        CANON
-                    </label>
-                </div>
 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="company" id="hujifilm">
-                    <label class="form-check-label" for="hujifilm">
-                        HUJIFILM
-                    </label>
+                <div class="detail_1">
+                    <h6>제조사</h6>
+                        <div th:each="c : ${company}" class="form-check form-check-inline">
+                            <input type="radio" th:field="*{company}" th:value="${c.name()}" class="form-check-input" ondblclick="this.checked=false">
+                            <label th:for="${#ids.prev('company')}" th:text="${c.description}" class="form-check-label"></label>
+                        </div>
                 </div>
-            </div>
 
             <hr>
 
-            <div>
-                <h6>디카분류</h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="camera_div" id="camera_div1">
-                    <label class="form-check-label" for="camera_div1">
-                        DSLR
-                    </label>
+                <div class="detail_2">
+                    <h6>디카분류</h6>
+                        <div th:each="cd : ${cameraDiv}" class="form-check form-check-inline">
+                            <input type="radio" th:field="*{cameraDiv}" th:value="${cd.name()}" class="form-check-input" ondblclick="this.checked=false">
+                            <label th:for="${#ids.prev('cameraDiv')}" th:text="${cd.description}" class="form-check-label"></label>
+                        </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="camera_div" id="camera_div2">
-                    <label class="form-check-label" for="camera_div2">
-                        DSLT
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="camera_div" id="camera_div3">
-                    <label class="form-check-label" for="camera_div3">
-                        미러리스
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="camera_div" id="camera_div4">
-                    <label class="form-check-label" for="camera_div4">
-                        하이엔드
-                    </label>
-                </div>
-            </div>
-            <hr>
-            <div>
-                <h6>센서분류</h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sensor_div" id="sensor1">
-                    <label class="form-check-label" for="sensor1">
-                        풀프레임
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sensor_div" id="sensor2">
-                    <label class="form-check-label" for="sensor2">
-                        크롭센서
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sensor_div" id="sensor3">
-                    <label class="form-check-label" for="sensor3">
-                        마이크로포서드센서
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sensor_div" id="sensor4">
-                    <label class="form-check-label" for="sensor4">
-                        1형이상센서
-                    </label>
-                </div>
-            </div>
 
             <hr>
 
-            <div>
-                <h6>유효화소수</h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pixel" id="pixel1">
-                    <label class="form-check-label" for="pixel1">
-                        4001만 이상
-                    </label>
+                <div class="detail_3">
+                    <h6>센서분류</h6>
+                        <div th:each="sd : ${sensorDiv}" class="form-check form-check-inline">
+                            <input type="radio" th:field="*{sensorDiv}" th:value="${sd.name()}" class="form-check-input" ondblclick="this.checked=false">
+                            <label th:for="${#ids.prev('sensorDiv')}" th:text="${sd.description}" class="form-check-label"></label>
+                        </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pixel" id="pixel2">
-                    <label class="form-check-label" for="pixel2">
-                        4000만 이하
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pixel" id="pixel3">
-                    <label class="form-check-label" for="pixel3">
-                        3000만 이하
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pixel" id="pixel4">
-                    <label class="form-check-label" for="pixel4">
-                        2000만 이하
-                    </label>
-                </div>
-            </div>
 
             <hr>
 
-            <div>
-                <h6>동영상 해상도</h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="reservation" id="reservation1">
-                    <label class="form-check-label" for="reservation1">
-                        4K UHD
-                    </label>
+                <div class="detail_4">
+                    <h6>동영상 해상도</h6>
+                        <div th:each="r : ${resolution}" class="form-check form-check-inline">
+                            <input type="radio" th:field="*{resolution}" th:value="${r.name()}" class="form-check-input" ondblclick="this.checked=false">
+                            <label th:for="${#ids.prev('resolution')}" th:text="${r.description}" class="form-check-label"></label>
+                        </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="reservation" id="reservation2">
-                    <label class="form-check-label" for="reservation2">
-                        FHD
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="reservation" id="reservation3">
-                    <label class="form-check-label" for="reservation3">
-                        HD
-                    </label>
-                </div>
-            </div>
 
             <hr>
 
-            <div>
-                <h6>추가옵션</h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pop_option" id="pop_option1">
-                    <label class="form-check-label" for="pop_option1">
-                        손떨림보정
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pop_option" id="pop_option2">
-                    <label class="form-check-label" for="pop_option2">
-                        방진/방적
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pop_option" id="pop_option3">
-                    <label class="form-check-label" for="pop_option3">
-                        방수
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="pop_option" id="pop_option4">
-                    <label class="form-check-label" for="pop_option4">
-                        Wi-Fi
-                    </label>
-                </div>
-            </div>
+                <div class="detail_5">
+                    <h6>추가옵션</h6>
+                        <div th:each="po : ${popular_options}" class="form-check form-check-inline">
+                            <input type="checkbox" th:field="*{popular_options}" th:value="${po.name()}" class="form-check-input" ondblclick="this.checked=false">
+                            <label th:for="${#ids.prev('popular_options')}" th:text="${po.description}" class="form-check-label"></label>
+                        </div>
 
+                </div>
+
+            <hr>
+
+                <div class="detail_6">
+                    <h6>유효 화소수</h6>
+                        <div class="input-group">
+                                <input type="number" th:field="*{pixels}" class="form-control" placeholder="유효화소수를 입력해주세요">
+                            <div class="input-group-append">
+                                <span class="input-group-text">만 화소</span>
+                            </div>
+                        </div>
+
+                </div>
         </div>
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">상품 상세 내용</span>
