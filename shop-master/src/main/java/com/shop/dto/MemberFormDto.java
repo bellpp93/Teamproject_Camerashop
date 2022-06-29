@@ -26,7 +26,16 @@ public class MemberFormDto {
     @NotEmpty(message = "주소는 필수 입력 값입니다.")
     private String address;
 
+    @NotEmpty(message = "상세주소는 필수 입력 값입니다.")
+    private String addressDetail;
+
     @NotEmpty(message = "주민등록번호 필수 입력 값입니다.")
     @registNumberValid(message = "올바른 주민등록번호가 아닙니다.")
     private String registNumber;
+
+    @NotEmpty(message = "닉네임 필수 입력 값입니다.")
+    private String nickname;
+
+    @NotEmpty(message = "성별 필수 입력 값입니다.")
+    private String sex;
 }
