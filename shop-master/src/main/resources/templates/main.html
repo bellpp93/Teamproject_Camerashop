@@ -3,6 +3,22 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout1}">
 
+<!-- 사용자 스크립트 추가 -->
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+
+        $(document).ready(function(){
+           number_format();
+        });
+
+        function number_format(){
+            var money = $("#money").text();
+            $("#money").html(money.toString().replace(/\B(?=(\d{3})+(?!\d))/g,','));
+        }
+
+    </script>
+</th:block>
+
 <!-- 사용자 CSS 추가 -->
 <th:block layout:fragment="css">
     <style>
@@ -76,7 +92,7 @@
                         <div class="card-body">
                             <h4 class="card-title">[[${item.itemNm}]]</h4>
                             <p class="card-text">[[${item.itemDetail}]]</p>
-                            <h3 class="card-title text-danger">[[${item.price}]]원</h3>
+                            <h3 class="card-title text-danger" id="money">[[${item.price}]]원</h3>
                         </div>
                     </a>
                 </div>
