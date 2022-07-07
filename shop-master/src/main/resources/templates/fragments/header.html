@@ -4,16 +4,16 @@
 
 <div th:fragment="header">
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="/">
                 <img src="https://github.com/bellpp93/Teamproject_Camerashop/blob/master/shop-master/src/main/resources/static/images/minicamera_logo.png?raw=true" width="200" height="60" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
             </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarsExample04">
+            <div class="collapse navbar-collapse justify-content-between" id="navbarResponsive">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
                         <a class="nav-link" href="/admin/item/new">상품 등록</a>
@@ -47,6 +47,13 @@
                         </div>
                     </li>
                 </ul>&nbsp;&nbsp;
+                <!--
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Introduce</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                </ul>
+                -->
                 <form class="form-inline my-2 my-lg-0" th:action="@{/}" method="get">
                     <input name="searchQuery" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
