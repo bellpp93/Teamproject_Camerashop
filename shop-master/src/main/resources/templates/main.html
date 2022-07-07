@@ -70,7 +70,7 @@
     <body id="page-top">
         <!-- Masthead-->
         <header class="masthead">
-            <img class="img-fluid" src="https://github.com/bellpp93/Teamproject_Camerashop/blob/master/shop-master/src/main/resources/static/images/%EA%B0%80%EB%A1%9C%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B0%80%EB%A1%9C02.jpg?raw=true" alt="..." />
+            <img class="img-fluid" src="https://github.com/bellpp93/Teamproject_Camerashop/blob/master/shop-master/src/main/resources/static/images/%EA%B0%80%EB%A1%9C%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B0%80%EB%A1%9C14.jpg?raw=true" alt="..." />
             <!--
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
@@ -96,6 +96,7 @@
                         </p>
                     </div>
                 </div>
+                <img class="img-fluid" src="https://github.com/bellpp93/Teamproject_Camerashop/blob/master/shop-master/src/main/resources/static/images/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9D%B4%EB%AF%B8%EC%A7%80.png?raw=true" alt="..." />
             </div>
         </section>
         <!-- Projects-->
@@ -241,6 +242,10 @@
             </div>
         </section>
         -->
+        <input type="hidden" name="searchQuery" th:value="${itemSearchDto.searchQuery}">
+        <div th:if="${not #strings.isEmpty(itemSearchDto.searchQuery)}" class="center">
+            <p class="h3 font-weight-bold" th:text="${itemSearchDto.searchQuery} + '검색 결과'"></p>
+        </div>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2022</div></footer>
         <!-- Bootstrap core JS-->
@@ -370,13 +375,7 @@
         </div>
     </div>
     -->
-
     <!--
-    <input type="hidden" name="searchQuery" th:value="${itemSearchDto.searchQuery}">
-    <div th:if="${not #strings.isEmpty(itemSearchDto.searchQuery)}" class="center">
-        <p class="h3 font-weight-bold" th:text="${itemSearchDto.searchQuery} + '검색 결과'"></p>
-    </div>
-
     <div class="row">
         <th:block th:each="item, status: ${items.getContent()}">
             <div class="col-md-4 margin">
@@ -393,7 +392,9 @@
             </div>
         </th:block>
     </div>
-
+    -->
+    <!-- 페이지 처리 -->
+    <!--
     <div th:with="start=${(items.number/maxPage)*maxPage + 1}, end=(${(items.totalPages == 0) ? 1 : (start + (maxPage - 1) < items.totalPages ? start + (maxPage - 1) : items.totalPages)})" >
         <ul class="pagination justify-content-center">
 
