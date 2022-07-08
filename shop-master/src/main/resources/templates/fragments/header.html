@@ -37,20 +37,27 @@
                     <li class="nav-item" sec:authorize="isAuthenticated()">
                         <a class="nav-link" href="/members/logout">로그아웃</a>
                     </li>
+                    <li class="nav-item" sec:authorize="isAnonymous()">
+                        <a class="nav-link" href="http://google.com">고객센터</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">브랜드</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="/company/nikon">Nikon</a>
                             <a class="dropdown-item" href="/company/canon">Canon</a>
-                            <a class="dropdown-item" href="/company/sony">SONY</a>
-                            <a class="dropdown-item" href="/company/fujifilm">FUJIFILM</a>
-                            <a class="dropdown-item" href="/company/olympus">OLYMPUS</a>
+                            <a class="dropdown-item" href="/company/sony">Sony</a>
+                            <a class="dropdown-item" href="/company/fujifilm">Fujifilm</a>
+                            <a class="dropdown-item" href="/company/olympus">Olympus</a>
                         </div>
                     </li>
                 </ul>&nbsp;&nbsp;
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Introduce</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Product</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Introduce</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Product</a>
+                    </li>
                     <!--
                     <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
                     -->
