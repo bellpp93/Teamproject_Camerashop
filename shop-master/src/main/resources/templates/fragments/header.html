@@ -22,28 +22,11 @@
                     <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
                         <a class="nav-link" href="/admin/items">상품 관리</a>
                     </li>
-                    <li class="nav-item" sec:authorize="isAuthenticated()">
-                        <a class="nav-link" href="/cart">장바구니</a>
-                    </li>
                     <li class="nav-item" sec:authorize="isAnonymous()">
                         <a class="nav-link" href="/members/login">로그인</a>
                     </li>
                     <li class="nav-item" sec:authorize="isAnonymous()">
                         <a class="nav-link" href="/members/new">회원가입</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://google.com">고객센터</a>
-                    </li>
-                    <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">마이페이지</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown02">
-                            <div class="nav-item" sec:authorize="isAuthenticated()">
-                                <a class="dropdown-item" href="/orders">구매이력</a>
-                            </div>
-                            <div class="nav-item" sec:authorize="isAuthenticated()">
-                                <a class="dropdown-item" href="/members/logout">로그아웃</a>
-                            </div>
-                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">브랜드</a>
@@ -57,11 +40,23 @@
                     </li>
                 </ul>&nbsp;&nbsp;
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Introduce</a>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link" href="/orders">구매이력</a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link" href="/cart">장바구니</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Product</a>
+                        <a class="nav-link" href="http://google.com">고객센터</a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link" href="/members/logout">로그아웃</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" sec:authorize="isAnonymous()">Introduce</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" sec:authorize="isAnonymous()">Product</a>
                     </li>
                     <!--
                     <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
