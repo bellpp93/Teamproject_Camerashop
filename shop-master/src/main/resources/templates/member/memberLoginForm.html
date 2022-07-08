@@ -43,8 +43,8 @@
     /* STRUCTURE */
 
     .wrapper {
-      background-image:url("https://github.com/bellpp93/Teamproject_Camerashop/blob/master/shop-master/src/main/resources/static/images/%EA%B0%80%EB%A1%9C%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B0%80%EB%A1%9C02.jpg?raw=true");
-      background-size:inherit;
+      background-image:url("https://github.com/bellpp93/Teamproject_Camerashop/blob/master/shop-master/src/main/resources/static/images/%EA%B0%80%EB%A1%9C%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B7%B8%EB%A6%BC3.png?raw=true");
+      background-size:cover;
       background-repeat : no-repeat;
       position: absolute;
       transform: translate(-50%, -50%);
@@ -66,7 +66,7 @@
       padding: 30px;
       width: 90%;
       max-width: 450px;
-      max-height: 300px;
+      max-height: 340px;
       position: relative;
       padding: 0px;
       padding-top: 20px;
@@ -161,7 +161,7 @@
       border-bottom: 2px solid #5fbae9;
     }
 
-    input[type=text], input[type=email], input[type=password]:placeholder {
+    input[type=text], input[type=email], input[type=password]::placeholder {
       color: #cccccc;
     }
 
@@ -279,7 +279,7 @@
     }
 
     #icon {
-      width:60%;
+      width:40%;
     }
 
     .error {
@@ -295,9 +295,9 @@
       <!-- Tabs Titles -->
 
       <!-- Icon -->
-     <!-- <div class="fadeIn first">
-        <img href ="../../static/images/minicamera_logo.png" id="icon" alt="User Icon" />
-      </div> -->
+      <div class="fadeIn first">
+        <img src="https://github.com/bellpp93/Teamproject_Camerashop/blob/master/shop-master/src/main/resources/static/images/minicamera_logo.png?raw=true" id="icon" alt="User Icon" />
+      </div>
 
       <!-- Login Form -->
       <form role="form" method="post" action="/members/login">
@@ -305,10 +305,10 @@
                onfocus="this.placeholder=''" onblur="this.placeholder='이메일을 입력하세요.'">
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="비밀번호를 입력하세요."
                onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력하세요.'">
-        <p th:if="${loginErrorMsg}" class="error" th:text="${loginErrorMsg}"></p>
         <input type="submit" class="fadeIn fourth" value="로그인">
         <input type="button" class="fadeIn fourth" value="회원 가입" onClick="location.href='/members/new'">
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <p th:if="${loginErrorMsg}" class="error" th:text="${loginErrorMsg}"></p>
       </form>
 
       <!-- Remind Passowrd -->
