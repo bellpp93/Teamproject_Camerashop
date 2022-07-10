@@ -11562,7 +11562,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("https://github.com/bellpp93/Teamproject_Camerashop/blob/master/shop-master/src/main/resources/static/images/%EA%B0%80%EB%A1%9C%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B0%80%EB%A1%9C14.jpg?raw=true");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
