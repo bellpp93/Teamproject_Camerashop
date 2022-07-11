@@ -31,18 +31,35 @@ public class companyController {
     private final ItemService itemService;
 
     @GetMapping(value = "/nikon" )
-    public String nikonPage(Model model){
-        model.addAttribute("brand","nikon 페이지 입니다.");
+    public String nikonPage(ItemSearchDto itemSearchDto, Optional<Integer> page, Model model){
+        Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 6);
+        Page<MainItemDto> items = itemService.getMainItemPage(itemSearchDto, pageable);
+
+
+        model.addAttribute("items", items);
+        model.addAttribute("maxPage", 5);
         return "company/nikonPage";}
 
+
+
     @GetMapping(value = "/sony" )
-    public String sonyPage(Model model){
-        model.addAttribute("brand","sony 페이지 입니다.");
+    public String sonyPage(ItemSearchDto itemSearchDto, Optional<Integer> page, Model model){
+        Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 6);
+        Page<MainItemDto> items = itemService.getMainItemPage(itemSearchDto, pageable);
+
+
+        model.addAttribute("items", items);
+        model.addAttribute("maxPage", 5);
         return "company/sonyPage";}
 
     @GetMapping(value = "/olympus" )
-    public String olymPage(Model model){
-        model.addAttribute("brand","olympus 페이지 입니다.");
+    public String olymPage(ItemSearchDto itemSearchDto, Optional<Integer> page, Model model){
+        Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 6);
+        Page<MainItemDto> items = itemService.getMainItemPage(itemSearchDto, pageable);
+
+
+        model.addAttribute("items", items);
+        model.addAttribute("maxPage", 5);
         return "company/olymPage";}
 
     @GetMapping(value = "/canon" )
@@ -52,12 +69,16 @@ public class companyController {
 
 
         model.addAttribute("items", items);
-        model.addAttribute("itemSearchDto", itemSearchDto);
         model.addAttribute("maxPage", 5);
         return "company/canonPage";}
 
     @GetMapping(value = "/fujifilm" )
-    public String hujiPage(Model model){
-        model.addAttribute("brand","fujifilm 페이지 입니다.");
+    public String hujiPage(ItemSearchDto itemSearchDto, Optional<Integer> page, Model model){
+        Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 6);
+        Page<MainItemDto> items = itemService.getMainItemPage(itemSearchDto, pageable);
+
+
+        model.addAttribute("items", items);
+        model.addAttribute("maxPage", 5);
         return "company/fujiPage";}
 }
