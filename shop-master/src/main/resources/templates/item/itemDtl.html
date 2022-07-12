@@ -147,10 +147,16 @@
         .item-dt{
             color: dimgray;
         }
+        .content-mg{
+            margin-left:20%;
+            margin-right:20%;
+            margin-top: 100px;
+            margin-bottom:100px;
+        }
     </style>
 </th:block>
 
-<div layout:fragment="content" style="margin-left:25%;margin-right:25%">
+<div layout:fragment="content" style="margin-left:25%;margin-right:25%" class="content-mg">
 
     <input type="hidden" id="itemId" th:value="${item.id}">
 
